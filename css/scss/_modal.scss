@@ -159,6 +159,10 @@
 
     &.ativo {
         display: flex;
+
+        .modal {
+            animation: descer 0.4s forwards ease;
+        }
     }
 
     .modal {
