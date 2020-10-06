@@ -1,5 +1,12 @@
+// Cores
 $azul: #0E2C52;
 $branco: #F8F8F8;
+
+// Medidas
+$distancia-x: 20px;
+$distancia-y-p: 15px;
+$distancia-y-m: 30px;
+$distancia-y-g: 60px; 
 
 // Mixin Sombra
 @mixin sombra($sombra...) {
