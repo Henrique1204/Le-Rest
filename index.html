@@ -90,9 +90,8 @@
         </div>
     </main>
 
-    <!-- Que? Quis mudar o de atualizar pra não ficar associado, tu tem uma diferença maior entre as opções, o da pergunta é diferente por si só -->
     <section class="modal-container">
-        <div class="modal">
+        <div class="modal" data-modal="adicionar">
             <button type="button" class="btn-fechar">
                 <img src="img/icon_fechar_azul.svg" alt="Fechar modal">
             </button>
@@ -103,6 +102,42 @@
             </div>
 
             <form id="adicionar_item">
+                <div class="campo">
+                    <label for="id">ID:</label>
+                    <input type="text" name="id" id="id" readonly value="1">
+                </div>
+
+                <div class="campo">
+                    <select name="categorias" id="categorias">
+                        <option value="">Selecione a categoria...</option>
+                        <option value="massas">Massas</option>
+                        <option value="sobremesas">Sobremesas</option>
+                        <option value="carnes">Carnes</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="descricao">Descrição</label>
+                    <textarea name="descricao" id="descricao" cols="30" rows="10"></textarea>
+                </div>
+
+                <button type="submit">Finalizar</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="modal-container">
+        <div class="modal" data-modal="atualizar">
+            <button type="button" class="btn-fechar">
+                <img src="img/icon_fechar_branco.svg" alt="Fechar modal">
+            </button>
+
+            <div class="container-titulo">
+                <h1>Atualizar</h1>
+                <span>§</span>
+            </div>
+
+            <form id="atualizar_item">
                 <div class="campo">
                     <label for="id">ID:</label>
                     <input type="text" name="id" id="id" readonly value="1">
