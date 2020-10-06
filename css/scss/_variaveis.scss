@@ -56,3 +56,16 @@ $distancia-y-g: 60px;
         transform: translate3d(0, 0, 0);
     }
 }
+
+// Responsividade
+@mixin responsividade($tela: mobile) {
+    @if ($tela == mobile) {
+        @media (max-width: 780px) {
+            @content;
+        }
+    } @else {
+        @media (max-width: 1080px) {
+            @content;
+        }
+    }
+}

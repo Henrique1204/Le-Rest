@@ -47,4 +47,9 @@ header {
     color: $branco;
     background-color: $azul;
     font-weight: 400;
+
+    @include responsividade(mobile) {
+        padding: $distancia-y-p 0;
+        font-size: em(24);
+    }
 }

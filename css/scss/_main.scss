@@ -1,11 +1,21 @@
 main {
     width: 100%;
     max-width: 1000px;
-    padding: $distancia-y-g 20px;
+    padding: $distancia-y-g 0;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: $distancia-y-m $distancia-x;
+
+    @include responsividade(tablet) {
+        max-width: 700px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include responsividade() {
+        max-width: 300px;
+        grid-template-columns: 1fr;
+    }
 
     & > .container-titulo {
         max-width: 480px;
@@ -20,6 +30,18 @@ main {
 
         span {
             @include ornamento();
+        }
+
+        @include responsividade(mobile) {
+            max-width: 300px;
+
+            h1 {
+                font-size: em(20);
+            }
+
+            span {
+                @include ornamento(16, 2);
+            }
         }
     }
 
@@ -54,6 +76,10 @@ main {
         display: flex;
         justify-content: center;
         align-items: center;
+
+        @include responsividade() {
+            min-height: 300px;
+        }
     }
 
     .card-cardapio {
