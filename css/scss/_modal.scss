@@ -17,7 +17,7 @@
             @include modal(claro);
         }
 
-        &[data-modal="atualizar"] {
+        &[data-modal="atualizar"], &[data-modal="deletar"] {
             @include modal(escuro);
         }
     }
