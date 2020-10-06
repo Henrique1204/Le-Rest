@@ -15,8 +15,44 @@ $distancia-y-g: 60px;
     box-shadow: $sombra;
 }
 
+// Como é um estilo que a gente vai usar bastante, vou jogar num mixin
+@mixin ornamento($tamanho: 24, $altura-sep: 3) {
+    margin-top: 5px;
+    font-size: em($tamanho);
+    // Pra centralizar as barrinhas com o meio do caractere
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::before, &::after {
+        content: "";
+        width: $altura-sep * 15 * 1px;
+        height: $altura-sep * 1px;
+        background-color: currentColor;
+        display: inline-block;
+    }
+
+    &::before {
+        margin-right: 5px;
+    }
+
+    &::after {
+        margin-left: 5px;
+    }
+}
+
 // Converter valores para em
-@function em($pixel, $padrao_navegador: 16)
-{
+@function em($pixel, $padrao_navegador: 16) {
     @return ($pixel / $padrao_navegador) * 1em;
 } 
+
+// Animação
+@keyframes mover {
+    0% {
+        transform: translate3d(0, 0, 0);
+    } 50% {
+        transform: translate3d(-10px, -2px, 0);
+    } 100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
