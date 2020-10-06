@@ -1,0 +1,15 @@
+$azul: #0E2C52;
+$branco: #F8F8F8;
+
+// Mixin Sombra
+@mixin sombra($sombra...) {
+    -webkit-box-shadow: $sombra;
+    -moz-box-shadow: $sombra;
+    box-shadow: $sombra;
+}
+
+// Converter valores para em
+@function em($pixel, $padrao_navegador: 16)
+{
+    @return ($pixel / $padrao_navegador) * 1em;
+} 
