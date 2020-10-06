@@ -1,5 +1,5 @@
 // Importa o arquivo modal.js
-import Modal from "./modules/modal.js";
+import Modal from "./modules/Modal.js";
 
 // Seleciona os botões que ativam o modal...
 // ...e retorna uma nodeList com os elementos html.
