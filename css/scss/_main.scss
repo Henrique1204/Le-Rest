@@ -58,7 +58,6 @@ main {
     button.icon-container {
         padding: $distancia-y-m;
         cursor: pointer;
-        outline: none;
         transition: 0.3s;
 
         &:hover {

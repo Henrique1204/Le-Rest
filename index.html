@@ -7,11 +7,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
     <!-- CSS -->
     <link rel="stylesheet" href="css/estilo.css">
+    <!-- JavaScript -->
+    <script type="module" src="js/script.js" defer></script>
     <title>Le Rest</title>
 </head>
 <body>
     <header>
-        <h1>Le Rest - API</h1>
+        <h1>Le Rest</h1>
     </header>
 
     <main>
@@ -21,17 +23,17 @@
         </div>
 
         <div class="card-add">
-            <button type="button" class="icon-container">
+            <button type="button" class="icon-container" data-btn="adicionar">
                 <img src="img/icon_add.svg" alt="Adicionar novo item">
             </button>
         </div>
 
         <div class="card-cardapio">
-            <button class="icone-editar">
+            <button class="icone-editar" data-btn="atualizar">
                 <img src="img/icon_editar.svg" alt="Editar item">
             </button>
 
-            <button class="icone-remover">
+            <button class="icone-remover" data-btn="deletar">
                 <img src="img/icon_remover.svg" alt="Remover item">
             </button>
 
@@ -48,11 +50,11 @@
         </div>
 
         <div class="card-cardapio">
-            <button class="icone-editar">
+            <button class="icone-editar" data-btn="atualizar">
                 <img src="img/icon_editar.svg" alt="Editar item">
             </button>
 
-            <button class="icone-remover">
+            <button class="icone-remover" data-btn="deletar">
                 <img src="img/icon_remover.svg" alt="Remover item">
             </button>
 
@@ -69,11 +71,11 @@
         </div>
 
         <div class="card-cardapio">
-            <button class="icone-editar">
+            <button class="icone-editar" data-btn="atualizar">
                 <img src="img/icon_editar.svg" alt="Editar item">
             </button>
 
-            <button class="icone-remover">
+            <button class="icone-remover" data-btn="deletar">
                 <img src="img/icon_remover.svg" alt="Remover item">
             </button>
 
@@ -90,7 +92,7 @@
         </div>
     </main>
 
-    <section class="modal-container">
+    <section class="modal-container" data-modalContainer="adicionar">
         <div class="modal" data-modal="adicionar">
             <button type="button" class="btn-fechar">
                 <img src="img/icon_fechar_azul.svg" alt="Fechar modal">
@@ -126,7 +128,7 @@
         </div>
     </section>
 
-    <section class="modal-container">
+    <section class="modal-container" data-modalContainer="atualizar">
         <div class="modal" data-modal="atualizar">
             <button type="button" class="btn-fechar">
                 <img src="img/icon_fechar_branco.svg" alt="Fechar modal">
@@ -162,7 +164,7 @@
         </div>
     </section>
 
-    <section class="modal-container">
+    <section class="modal-container" data-modalContainer="deletar">
         <div class="modal" data-modal="deletar">
             <button type="button" class="btn-fechar">
                 <img src="img/icon_fechar_branco.svg" alt="Fechar modal">
