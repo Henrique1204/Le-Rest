@@ -4,7 +4,8 @@
   "description": "Site para consumir uma API sobre pratos de culinária",
   "main": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack --mode production",
+    "dev": "webpack --mode development --watch"
   },
   "repository": {
     "type": "git",
@@ -17,7 +18,16 @@
   },
   "homepage": "https://github.com/Henrique1204/Le-Rest#readme",
   "dependencies": {
+    "@babel/polyfill": "^7.11.5",
     "gulp": "^4.0.2",
-    "gulp-sass": "^4.1.0"
+    "gulp-sass": "^4.1.0",
+    "whatwg-fetch": "^3.4.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
   }
 }
