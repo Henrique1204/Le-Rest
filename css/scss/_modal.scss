@@ -97,6 +97,7 @@
             border-radius: 4px;
             margin: 0 auto;
             font-size: em(16);
+            font-weight: bold;
             display: block;
             cursor: pointer;
 
@@ -132,6 +133,8 @@
             border: none;
             border-radius: 4px;
             font-size: em(16);
+            font-weight: bold;
+            color: $azul;
             display: inline-block;
             cursor: pointer;
 
