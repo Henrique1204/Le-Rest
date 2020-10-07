@@ -1,0 +1,70 @@
+footer {
+    @include sombra(0 -2px 4px rgba(0, 0, 0, 0.25));
+
+    padding: $distancia-y-m 0;
+    color: $branco;
+    background-color: $azul;
+
+    .container-titulo {
+        margin: 0 auto;
+        text-align: center;
+        text-transform: uppercase;
+        grid-column: 1 / -1;
+
+        h1 {
+            font-size: em(24);
+            letter-spacing: 0.1em;
+
+            @include responsividade(mobile) {
+                font-size: em(18);
+            }
+        }
+
+        span {
+            @include ornamento(18, 3);
+        }
+    }
+
+    .container {
+        width: 100%;
+        max-width: 1000px;
+        margin: $distancia-y-m auto 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: $distancia-y-m $distancia-x;
+
+        @include responsividade(tablet) {
+            max-width: 700px;
+        }
+    
+        @include responsividade() {
+            max-width: 300px;
+            grid-template-columns: 1fr;
+        }
+
+        li {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            h2  {
+                font-size: em(20);
+                font-weight: normal;
+                text-align: center;
+                letter-spacing: 0.1em;
+            }
+
+            span {
+                @include ornamento(16, 2);
+
+                margin-bottom: 10px;
+                color: rgba($color: $branco, $alpha: 0.2);
+            }
+
+            a:hover img {
+                animation: mover 0.4s forwards ease;
+            }
+        }
+    }
+}
