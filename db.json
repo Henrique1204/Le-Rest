@@ -1,0 +1,20 @@
+{
+  "pratos": [
+    {
+      "nome": "Bife",
+      "categoria": "carnes",
+      "descricao": "Melhor bife mano, confia.",
+      "id": 3
+    },
+    {
+      "nome": "Pudim",
+      "categoria": "sobremesas",
+      "descricao": "O melhor pudim da região ao lado da cidade, você com certeza não vai esquecer dele depois de experimentar, eu garanto.",
+      "id": 4
+    },
+    {
+      "teste": "oi",
+      "id": 5
+    }
+  ]
+}
