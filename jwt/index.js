@@ -59,6 +59,7 @@ app.put('/pratos', verifyJWT, (req, res, next) => {
 })
 
 app.delete('/pratos', verifyJWT, (req, res, next) => {
+    console.log("Deletou!");
     fetch(`http://localhost:3000/pratos/${req.body.id}`, {method: "DELETE"})
     .then(resFetch => resFetch.json())
     .then(json => res.json(json))

@@ -1,20 +1,10 @@
 {
   "pratos": [
     {
-      "nome": "Bife",
+      "id": 5,
+      "nome": "Arroz e feijão",
       "categoria": "carnes",
-      "descricao": "Melhor bife mano, confia.",
-      "id": 3
-    },
-    {
-      "nome": "Pudim",
-      "categoria": "sobremesas",
-      "descricao": "O melhor pudim da região ao lado da cidade, você com certeza não vai esquecer dele depois de experimentar, eu garanto.",
-      "id": 4
-    },
-    {
-      "teste": "oi",
-      "id": 5
+      "descricao": "arroz arroz arroz arroz arroz arroz arroz arroz arroz arroz."
     }
   ]
 }

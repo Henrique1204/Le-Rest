@@ -1,6 +1,20 @@
 // Importa o arquivo modal.js
 import Modal from "./modules/Modal.js";
 import Busca from "./modules/Busca.js";
+import Deletar from "./modules/Deletar.js";
+
+function puxarId(event) {
+    let id;
+
+    if (event.target.dataset.id) {
+        id = event.target.dataset.id;
+    } else {
+        id = event.target.parentNode.dataset.id;
+    }
+
+    return id;
+}
+
 
 function iniciarModais() {
     // Seleciona os botões que ativam o modal...
@@ -18,28 +32,15 @@ function iniciarModais() {
         // Adiciona o evento de click no botão.
         // Executa o método ativarModal da classe Modal (Arquivo ./modules/modal.js Linha 14).
         btn.addEventListener("click", modal.ativarModal);
-    
-        if (modalNome === "atualizar") {
-            btn.addEventListener("click", (e) => {
-                const dados = puxarValores(e);
-                const modalElemento = document.querySelector(`[data-modal="${modalNome}"]`);
-
-                modalElemento.querySelector('[name="nome"]').value = dados["nome"];
-                modalElemento.querySelector(`option[value="${dados["categoria"]}"]`).setAttribute("selected", "");
-                modalElemento.querySelector('[name="descricao"]').value = dados["descricao"];
-
-                new Atualizar("#atualizar_item", dados["id"]).iniciar();
-            });
-        }
 
         if (modalNome === "deletar") {
             btn.addEventListener("click", (e) => {
-                const opcaoNao = document.querySelector(`[data-modal="${modalNome}"] #nao`);
+                const btnNao = document.querySelector(`[data-modal="${modalNome}"] #nao`);
 
-                opcaoNao.addEventListener("click", modal.fecharModal);
+                btnNao.addEventListener("click", modal.fecharModal);
     
                 new Deletar(".opcoes", puxarId(e)).iniciar();
-            })
+            });
         }
     });
 }
