@@ -7,6 +7,22 @@ main {
     grid-template-columns: repeat(3, 1fr);
     gap: $distancia-y-m $distancia-x;
 
+    &.carregando {
+        .carregar {
+            display: block;
+            animation: girar 1.5s ease infinite;
+            opacity: 1;
+        }
+
+        .card-add {
+            display: none;
+        }
+
+        .card-cardapio {
+            display: none;
+        }
+    }
+
     @include responsividade(tablet) {
         max-width: 700px;
         grid-template-columns: repeat(2, 1fr);
@@ -63,6 +79,13 @@ main {
         &:hover {
             transform: rotate(90deg);   
         }
+    }
+
+    .carregar {
+        max-width: 160px;
+        margin: $distancia-y-g auto;
+        grid-column: 1 / -1;
+        display: none;
     }
 
     .card-add {

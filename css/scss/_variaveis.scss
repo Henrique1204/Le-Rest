@@ -67,6 +67,14 @@ $distancia-y-g: 60px;
     }
 }
 
+@keyframes girar {
+    from {
+        transform: rotate(0);
+    } to {
+        transform: rotate(360deg);
+    }
+}
+
 // Responsividade
 @mixin responsividade($tela: mobile) {
     @if ($tela == mobile) {
