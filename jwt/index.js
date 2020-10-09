@@ -37,6 +37,7 @@ app.get('/pratos', verifyJWT, (req, res, next) => {
 })
 
 app.post('/pratos', verifyJWT, (req, res, next) => {
+    console.log("Adicionou!");
     fetch('http://localhost:3000/pratos', {
         method: "POST",
         body: JSON.stringify(req.body),
