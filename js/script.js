@@ -16,7 +16,6 @@ function puxarId(event) {
     return id;
 }
 
-
 function iniciarModais() {
     // Seleciona os botões que ativam o modal...
     // ...e retorna uma nodeList com os elementos html.

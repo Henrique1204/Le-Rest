@@ -1,7 +1,7 @@
 import gerarJson from "./gerarJson.js";
 
 export default class Adicionar {
-    constructor(seletor) {
+    constructor(seletor){
         this.form = document.querySelector(seletor);
         this.btn = document.querySelector(`${seletor} [type="button"]`);
 
@@ -26,6 +26,7 @@ export default class Adicionar {
             method: "POST",
             body: gerarJson(this.form),
             headers: {
+
                 "Content-type": "application/json; charset=UTF-8",
                 "x-access-token": token
             }
@@ -36,7 +37,7 @@ export default class Adicionar {
         const campos = this.form.querySelectorAll("[name]");
         let isValido = true;
 
-        campos.forEach((campo) => {
+        campos.forEach((campo)=>{
             if (!campo.value) {
                 isValido = false;
             }
@@ -45,14 +46,16 @@ export default class Adicionar {
         return isValido;
     }
 
-    addEvento() {
+    addEvento(){
         this.btn.addEventListener("click", (e) => {
             e.preventDefault();
 
-            if (this.validarCampos(this.form)) {
+            if(this.validarCampos(this.form)){
+
                 this.adicionarDados();
             }
-        })
+
+        })        
     }
 
     iniciar() {
