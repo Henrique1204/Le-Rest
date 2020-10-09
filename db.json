@@ -1,10 +1,46 @@
 {
   "pratos": [
     {
-      "id": 5,
-      "nome": "Arroz e feijão",
-      "categoria": "carnes",
-      "descricao": "arroz arroz arroz arroz arroz arroz arroz arroz arroz arroz."
+      "categoria": "Massas",
+      "id": "1",
+      "nome": "Macarrão ao molho branco",
+      "descricao": "Macarrão penne cozido em água, alho e cravo. Molho de azeite e cebola picada, creme de leite, requeijão, sal, coentro picado e pimenta calabresa moída."
+    },
+    {
+      "categoria": "Carnes",
+      "id": "2",
+      "nome": "Bife acebolado",
+      "descricao": "Bife coxão mole, frito em óleo de girassol, bem passado e temperado com orégano. Cebolas fritas em rodelas, com molho shoyo e açucar para caramelizar."
+    },
+    {
+      "categoria": "Sobremesas",
+      "id": "3",
+      "nome": "Bolo de chocolate",
+      "descricao": "Massa de chocolate com pedaços picados, sabor meio amargo e essência de baunilha. Recheio de ganache, cobertura de creme de chocolate e granulado em flocos."
+    },
+    {
+      "categoria": "Massas",
+      "id": "4",
+      "nome": "Lasanha",
+      "descricao": "Massa de farinha e ovos cortada em tiras. Recheio de carne moída ao molho de tomate, molho branco, queijo mussarela, presunto, orégano e coentro para temperar. "
+    },
+    {
+      "categoria": "Carnes",
+      "id": "5",
+      "nome": "Pernil assado e batatas",
+      "descricao": "Peça marinada (8hrs) em vinagre branco, alho amassado, cebola picada, páprica picante moída, manjericão, sal e limão, assada com batatas inteiras e azeite de oliva."
+    },
+    {
+      "categoria": "Sobremesas",
+      "id": "6",
+      "nome": "Tiramisù",
+      "descricao": "Biscoitos champanhe embebidos em café e rum. Recheio aerado de creme com queijo mascarpone, açúcar, ovos e vinho Marsala. Cobertura de cacau em pó polvilhado."
+    },
+    {
+      "categoria": "Massas",
+      "id": "7",
+      "nome": "Macarrão ao molho branco e brócolis",
+      "descricao": "Massa de fettuccine. Molho branco com creme de leite, raspas de laranja, azeite, cebola e alho em pó, parmesão ralado, salsa e floretes de brócolis."
     }
-  ]
+ ]
 }

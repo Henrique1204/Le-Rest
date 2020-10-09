@@ -2,6 +2,7 @@
 import Modal from "./modules/Modal.js";
 import Busca from "./modules/Busca.js";
 import Deletar from "./modules/Deletar.js";
+import Adicionar from "./modules/Adicionar.js";
 
 function puxarId(event) {
     let id;
@@ -58,3 +59,5 @@ async function iniciar() {
 
 // Inicia os scripts quando a janela carrega.
 window.addEventListener("load", iniciar);
+
+new Adicionar("#adicionar_item").iniciar();
