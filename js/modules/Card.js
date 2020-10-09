@@ -1,7 +1,8 @@
 export default class Card {
-    criarCard() {
+    criarCard(id) {
         const card = document.createElement("div");
         card.classList.add("card-cardapio");
+        card.setAttribute("data-id", id);
 
         return card;
     }
@@ -14,10 +15,11 @@ export default class Card {
         return img;
     }
 
-    criarBotao(classe, dataBtn, caminho, alt) {
+    criarBotao(classe, dataBtn, caminho, alt, id) {
         const btn = document.createElement("button");
         btn.classList.add(classe);
         btn.setAttribute("data-btn", dataBtn);
+        btn.setAttribute("data-id", id);
 
         const icone = this.criarIcone(caminho, alt);
         btn.appendChild(icone);
@@ -47,31 +49,32 @@ export default class Card {
         return p;
     }
 
-    construirCard() {
+    construirCard(id, nome, categoria, descricao) {
         // Cria o card
-        const card = this.criarCard();
+        const card = this.criarCard(id);
 
         // Cria o botão de editar
-        const btnEditar = this.criarBotao("icone-editar", "atualizar", "img/icon_editar.svg", "Editar item");
+        const btnEditar = this.criarBotao("icone-editar", "atualizar", "img/icon_editar.svg", "Editar item", id);
         card.appendChild(btnEditar);
 
         // Cria o botão de remover
-        const btnRemover = this.criarBotao("icone-remover", "deletar", "img/icon_remover.svg", "Remover item");
+        const btnRemover = this.criarBotao("icone-remover", "deletar", "img/icon_remover.svg", "Remover item", id);
         card.appendChild(btnRemover);
 
         // Cria o container do ícone
         const iconContainer = document.createElement("div");
         iconContainer.classList.add("icon-container");
 
-        const icone = this.criarIcone("img/massas.svg", "Categoria massas");
+        const icone = this.criarIcone(`img/${categoria}.svg`,`Categoria ${categoria}`);
         iconContainer.appendChild(icone);
 
+        icone.setAttribute("data-categoria", categoria)
         card.appendChild(iconContainer);
 
-        const titulo = this.criarTitulo("Macarrão ao molho branco");
+        const titulo = this.criarTitulo(nome);
         card.appendChild(titulo);
 
-        const descri = this.criarDescricao("Macarrão pena cozido em água, alho e cravo. Molho de azeite e cebola picada, creme de leite, requeijão, sal, coentro picado e pimenta calabresa moída");
+        const descri = this.criarDescricao(descricao);
         card.appendChild(descri);
 
         return card;

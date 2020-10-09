@@ -1,5 +1,6 @@
 // Importa o arquivo modal.js
 import Modal from "./modules/Modal.js";
+import Busca from "./modules/Busca.js";
 
 // Seleciona os botões que ativam o modal...
 // ...e retorna uma nodeList com os elementos html.
@@ -17,3 +18,13 @@ btns.forEach((btn) => {
     // Executa o método ativarModal da classe Modal (Arquivo ./modules/modal.js Linha 14).
     btn.addEventListener("click", modal.ativarModal);
 });
+
+async function adicionarCards() {
+    const cards = await new Busca().criarCards();
+
+    cards.forEach((card) => {
+        document.querySelector("main").appendChild(card);
+    });
+}
+
+adicionarCards();
