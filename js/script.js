@@ -3,6 +3,7 @@ import Modal from "./modules/Modal.js";
 import Busca from "./modules/Busca.js";
 import Deletar from "./modules/Deletar.js";
 import Adicionar from "./modules/Adicionar.js";
+import Atualizar from "./modules/Atualizar.js";
 
 function puxarId(event) {
     let id;
@@ -14,6 +15,22 @@ function puxarId(event) {
     }
 
     return id;
+}
+
+// Caceta, tem algo errado, não tá indo o valor do categoria e nem o da descriçãos
+
+function puxarValores(event) {
+    const id = puxarId(event);
+
+    const card = document.querySelector(`[data-id="${id}"]`);
+    const dados = {
+        "id": id,
+        "nome": card.querySelector("h2").innerText,
+        "categoria": card.querySelector("[data-categoria]").dataset.categoria,
+        "descricao": card.querySelector("p").innerText
+    }
+
+    return dados;
 }
 
 function iniciarModais() {
@@ -32,6 +49,19 @@ function iniciarModais() {
         // Adiciona o evento de click no botão.
         // Executa o método ativarModal da classe Modal (Arquivo ./modules/modal.js Linha 14).
         btn.addEventListener("click", modal.ativarModal);
+
+        if (modalNome === "atualizar") {
+            btn.addEventListener("click", (e) => {
+                const dados = puxarValores(e);
+                const modalElemento = document.querySelector(`[data-modal="${modalNome}"]`);
+
+                modalElemento.querySelector('[name="nome"]').value = dados["nome"];
+                modalElemento.querySelector(`option[value="${dados["categoria"]}"]`).setAttribute("selected", "");
+                modalElemento.querySelector('[name="descricao"]').value = dados["descricao"];
+
+                new Atualizar("#atualizar_item", dados["id"]).iniciar();
+            });
+        }
 
         if (modalNome === "deletar") {
             btn.addEventListener("click", (e) => {

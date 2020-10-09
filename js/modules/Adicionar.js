@@ -1,3 +1,4 @@
+// Acho que deu, nem sei
 import gerarJson from "./gerarJson.js";
 
 export default class Adicionar {
@@ -26,7 +27,6 @@ export default class Adicionar {
             method: "POST",
             body: gerarJson(this.form),
             headers: {
-
                 "Content-type": "application/json; charset=UTF-8",
                 "x-access-token": token
             }

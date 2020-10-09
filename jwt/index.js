@@ -49,6 +49,7 @@ app.post('/pratos', verifyJWT, (req, res, next) => {
 })
 
 app.put('/pratos', verifyJWT, (req, res, next) => {
+    // O erro tá aqui, no arquivo que tá vindo
     fetch(`http://localhost:3000/pratos/${req.body.id}`, {
         method: "PUT",
         body: JSON.stringify(req.body.dados),
