@@ -76,16 +76,14 @@ function iniciarModais() {
 }
 
 async function iniciar() {
-    const main = document.querySelector("main");
-
     // Cria os elementos.
     const cards = await new Busca().criarCards();
 
     // Adiciona os cards no container main.
-    cards.forEach((card) => main.appendChild(card));
+    cards.forEach((card) => document.querySelector(".container-card").appendChild(card));
 
     // Para a animação de loading
-    main.classList.remove("carregando");
+    document.querySelector("main").classList.remove("carregando");
 
     // Inicia o script do modal.
     iniciarModais();

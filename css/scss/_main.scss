@@ -1,11 +1,21 @@
 main {
-    width: 100%;
-    max-width: 1000px;
     padding: $distancia-y-g 0;
-    margin: 0 auto;
+    position: relative;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1000px minmax(120px, 1fr);
+    justify-content: center;
     gap: $distancia-y-m $distancia-x;
+
+    @include responsividade(tablet) {
+        grid-template-columns: 1fr 700px 1fr;
+    }
+
+    @include responsividade() {
+        max-width: 300px;
+        margin: 0 auto;
+        grid-template-columns: 1fr;
+    }
+
 
     &.carregando {
         .carregar {
@@ -21,16 +31,6 @@ main {
         .card-cardapio {
             display: none;
         }
-    }
-
-    @include responsividade(tablet) {
-        max-width: 700px;
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    @include responsividade() {
-        max-width: 300px;
-        grid-template-columns: 1fr;
     }
 
     & > .container-titulo {
@@ -61,6 +61,13 @@ main {
         }
     }
 
+    .carregar {
+        max-width: 160px;
+        margin: $distancia-y-g auto;
+        grid-column: 1 / -1;
+        display: none;
+    }
+
     .icon-container {
         @include sombra(2px 2px 4px rgba(0, 0, 0, 0.25));
 
@@ -71,33 +78,63 @@ main {
         background-color: #FFF;
     }
 
-    button.icon-container {
+    [data-btn="adicionar"] {
+        @include sombra(4px 4px 8px rgba(0, 0, 0, 0.4));
+
+        width: 120px;
+        height: 120px;
+        margin-right: 20px;
         padding: $distancia-y-m;
+        grid-column: 3;
+        justify-self: center;
+        align-self: flex-start;
+        position: sticky;
+        top: 500px;
         cursor: pointer;
         transition: 0.3s;
 
         &:hover {
             transform: rotate(90deg);   
         }
+
+        @include responsividade(tablet) {
+            width: 80px;
+            height: 80px;
+            padding: $distancia-y-p;
+        }
+    
+        @include responsividade() {
+            width: 100px;
+            height: 100px;
+            padding: $distancia-x;
+            margin-right: 0;
+            grid-column: auto;
+            grid-row: 2;
+            position: relative;
+            top: 0;
+        }
     }
 
-    .carregar {
-        max-width: 160px;
-        margin: $distancia-y-g auto;
-        grid-column: 1 / -1;
-        display: none;
-    }
+    .container-card {
+        width: 100%;
+        max-width: 1000px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: $distancia-y-m $distancia-x;
+        grid-column: 2;
+        grid-row: 2;
 
-    .card-add {
-        @include sombra(2px 2px 4px rgba(0, 0, 0, 0.25));
-
-        min-height: 300px;
-        border: 4px solid $azul;
-        border-radius: 4px;
-        background-color: rgba($color: $branco, $alpha: 0.4);
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include responsividade(tablet) {
+            max-width: 700px;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    
+        @include responsividade() {
+            max-width: 300px;
+            grid-column: auto;
+            grid-row: auto;
+            grid-template-columns: 1fr;
+        }
     }
 
     .card-cardapio {
