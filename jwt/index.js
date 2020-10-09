@@ -31,7 +31,6 @@ app.get('/pratos', verifyJWT, (req, res, next) => {
     fetch('http://localhost:3000/pratos')
     .then(resFetch => resFetch.json())
     .then(json => {
-        console.log("FEtch");
         res.json(json);
     })
     .catch(erro => res.json(erro));

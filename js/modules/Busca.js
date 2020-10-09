@@ -1,7 +1,5 @@
-// Importa arquivo card
 import Card from "./Card.js";
 
-// Classe que será exportada
 export default class Busca {
     async buscarToken() {
         const req = await fetch('http://localhost:3001/login',{
@@ -35,5 +33,4 @@ export default class Busca {
 
         return cards;
     }
-
 }

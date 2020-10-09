@@ -60,9 +60,8 @@
             display: block;
         }
         
-        select, textarea {
+        input, select, textarea {
             width: 100%;
-            max-height: 120px;
             padding: 10px;
             border: none;
             border-radius: 4px;
@@ -85,6 +84,7 @@
         }
 
         textarea {
+            min-height: 140px;
             font-size: em(18);
         }
         

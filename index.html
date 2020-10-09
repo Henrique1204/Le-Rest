@@ -35,69 +35,6 @@
                 <img src="img/icon_add.svg" alt="Adicionar novo item">
             </button>
         </div>
-
-        <div class="card-cardapio">
-            <button class="icone-editar" data-btn="atualizar">
-                <img src="img/icon_editar.svg" alt="Editar item">
-            </button>
-
-            <button class="icone-remover" data-btn="deletar">
-                <img src="img/icon_remover.svg" alt="Remover item">
-            </button>
-
-            <div class="icon-container">
-                <img src="img/massas.svg" alt="Categoria massas">
-            </div>
-
-            <div class="container-titulo">
-                <h2>Macarrão ao molho branco</h2>
-                <span>§</span>
-            </div>
-
-            <p>Macarrão pena cozido em água, alho e cravo. Molho de azeite e cebola picada, creme de leite, requeijão, sal, coentro picado e pimenta calabresa moída</p>
-        </div>
-
-        <div class="card-cardapio">
-            <button class="icone-editar" data-btn="atualizar">
-                <img src="img/icon_editar.svg" alt="Editar item">
-            </button>
-
-            <button class="icone-remover" data-btn="deletar">
-                <img src="img/icon_remover.svg" alt="Remover item">
-            </button>
-
-            <div class="icon-container">
-                <img src="img/sobremesas.svg" alt="Categoria sobremesas">
-            </div>
-
-            <div class="container-titulo">
-                <h2>Sobremesas</h2>
-                <span>§</span>
-            </div>
-
-            <p>Macarrão pena cozido em água, alho e cravo. Molho de azeite e cebola picada, creme de leite, requeijão, sal, coentro picado e pimenta calabresa moída</p>
-        </div>
-
-        <div class="card-cardapio">
-            <button class="icone-editar" data-btn="atualizar">
-                <img src="img/icon_editar.svg" alt="Editar item">
-            </button>
-
-            <button class="icone-remover" data-btn="deletar">
-                <img src="img/icon_remover.svg" alt="Remover item">
-            </button>
-
-            <div class="icon-container">
-                <img src="img/carnes.svg" alt="Categoria carnes">
-            </div>
-
-            <div class="container-titulo">
-                <h2>Carnes</h2>
-                <span>§</span>
-            </div>
-
-            <p>Macarrão pena cozido em água, alho e cravo. Molho de azeite e cebola picada, creme de leite, requeijão, sal, coentro picado e pimenta calabresa moída</p>
-        </div>
     </main>
 
     <section class="modal-container" data-modalContainer="adicionar">
@@ -112,6 +49,11 @@
             </div>
 
             <form id="adicionar_item">
+                <div class="campo">
+                    <label for="nome">Nome:</label>
+                    <input type="text" name="nome" id="nome">
+                </div>
+
                 <div class="campo">
                     <select name="categorias" id="categorias">
                         <option value="">Selecione a categoria...</option>
@@ -143,6 +85,11 @@
             </div>
 
             <form id="atualizar_item">
+                <div class="campo">
+                    <label for="nome">Nome:</label>
+                    <input type="text" name="nome" id="nome">
+                </div>
+
                 <div class="campo">
                     <select name="categorias" id="categorias">
                         <option value="">Selecione a categoria...</option>
