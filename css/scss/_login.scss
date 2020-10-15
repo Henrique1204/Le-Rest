@@ -1,0 +1,47 @@
+.login {
+    padding: $distancia-y-g;
+
+     .container-titulo {
+        max-width: 480px;
+        margin: 0 auto;
+        text-align: center;
+        color: $azul;
+
+        h1 {
+            font-size: em(36);
+        }
+
+        span{
+            @include ornamento;
+        }
+    }
+    
+    p {
+    max-width: 480px;
+    margin: $distancia-y-p auto $distancia-y-m;
+    text-align: center;
+    color: rgba($color: $azul, $alpha: 0.6);
+}
+
+    button{
+        @include sombra (2px 2px 4px rgba(0,0,0,0.25));
+      
+        
+        padding: $distancia-y-p;
+        border: none;
+        text-transform: uppercase;
+        border-radius: 4px;
+        margin: auto;
+        color: $branco;
+        font-size: em(18);
+        background-color: $azul;
+        display: block;
+        cursor: pointer;
+
+        &:hover {
+            animation: mover 0.4s ease;
+        }
+    }
+}
+
+
