@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Le Rest - Adicione pratos, atualize os já existentes e removas os indesejados.">
-	<meta property="og:type" content="website"/>
-	<meta property="og:title" content="Le Rest | Uma API de cardápio."/>
-	<meta property="og:description" content="Le Rest - Adicione pratos, atualize os já existentes e removas os indesejados."/>
-	<meta property="og:url" content="https://le-rest.com"/>
-	<meta property="og:image" content="https://le-rest.com/img/og-le-rest.png"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Le Rest | Uma API de cardápio."/>
+    <meta property="og:description" content="Le Rest - Adicione pratos, atualize os já existentes e removas os indesejados."/>
+    <meta property="og:url" content="https://le-rest.com"/>
+    <meta property="og:image" content="https://le-rest.com/img/og-le-rest.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Favicon -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -23,41 +23,87 @@
     <header>
         <h1>Le Rest</h1>
     </header>
+    
+    <section>
+        <div class="container-titulo">
+            <h1>login bla bla bla</h1>
+            <span>§</span>
+        </div>
 
+        <p>bbbbbbb</p>
+
+        <button type="button"> fazer login
+
+        </button>
+    </section>
+    
     <main class="carregando">
         <div class="container-titulo">
             <h1>Bem vindo ao nosso cardápio</h1>
             <span>§</span>
         </div>
-
+        
         <div class="carregar">
             <img src="img/prato.svg" alt="Carregando">
         </div>
-
+        
         <button type="button" class="icon-container" data-btn="adicionar">
             <img src="img/icon_add.svg" alt="Adicionar novo item">
         </button>
-
+        
         <div class="container-card"></div>
     </main>
+    
+    <section class="modal-container" data-modalContainer="adicionar">
+        <div class="modal" data-modal="adicionar">
+            <button type="button" class="btn-fechar">
+                <img src="img/icon_fechar_azul.svg" alt="Fechar modal">
+            </button>
+            
+            <div class="container-titulo">
+                <h1>login</h1>
+                <span>§</span>
+            </div>
+            
+            <form id="adicionar_item">
+                <div class="campo">
+                    <label for="usuario">Usuário:</label>
+                    <input type="text" name="usuario" id="usuario">
+                </div>
+                
+                
+                <div class="campo">
+                    <label for="senha">Senha:</label>
+                    <input name="senha" id="senha" cols="30" rows="10"></input>
+                </div>
+                
+                <small>
+                    erro
+                </small>
+
+
+                <button type="button">Finalizar</button>
+            </form>
+        </div>
+    </section>
 
     <section class="modal-container" data-modalContainer="adicionar">
         <div class="modal" data-modal="adicionar">
             <button type="button" class="btn-fechar">
                 <img src="img/icon_fechar_azul.svg" alt="Fechar modal">
             </button>
-    
+            
             <div class="container-titulo">
                 <h1>Adicionar</h1>
                 <span>§</span>
             </div>
-
+            
             <form id="adicionar_item">
                 <div class="campo">
                     <label for="nome">Nome:</label>
                     <input type="text" name="nome" id="nome">
                 </div>
-
+                
                 <div class="campo">
                     <select name="categorias" id="categorias">
                         <option value="">Selecione a categoria...</option>
@@ -66,34 +112,34 @@
                         <option value="carnes">Carnes</option>
                     </select>
                 </div>
-
+                
                 <div class="campo">
                     <label for="descricao">Descrição</label>
                     <textarea name="descricao" id="descricao" cols="30" rows="10"></textarea>
                 </div>
-
+                
                 <button type="button">Finalizar</button>
             </form>
         </div>
     </section>
-
+    
     <section class="modal-container" data-modalContainer="atualizar">
         <div class="modal" data-modal="atualizar">
             <button type="button" class="btn-fechar">
                 <img src="img/icon_fechar_branco.svg" alt="Fechar modal">
             </button>
-
+            
             <div class="container-titulo">
                 <h1>Atualizar</h1>
                 <span>§</span>
             </div>
-
+            
             <form id="atualizar_item">
                 <div class="campo">
                     <label for="nome">Nome:</label>
                     <input type="text" name="nome" id="nome">
                 </div>
-
+                
                 <div class="campo">
                     <select name="categorias" id="categorias">
                         <option value="">Selecione a categoria...</option>
@@ -102,44 +148,44 @@
                         <option value="carnes">Carnes</option>
                     </select>
                 </div>
-
+                
                 <div class="campo">
                     <label for="descricao">Descrição</label>
                     <textarea name="descricao" id="descricao" cols="30" rows="10"></textarea>
                 </div>
-
+                
                 <!-- Mesma burrada do botão, viu como sujou a url? -->
                 <button type="button">Finalizar</button>
             </form>
         </div>
     </section>
-
+    
     <section class="modal-container" data-modalContainer="deletar">
         <div class="modal" data-modal="deletar">
             <button type="button" class="btn-fechar">
                 <img src="img/icon_fechar_branco.svg" alt="Fechar modal">
             </button>
-
+            
             <div class="container-titulo">
                 <h1>Deletar</h1>
                 <span>§</span>
             </div>
-
+            
             <p>Tem certeza que deseja deletar esse item?</p>
-
+            
             <div class="opcoes">
                 <button type="button" id="sim">Sim</button>
                 <button type="button" id="nao">Não</button>
             </div>
         </div>
     </section>
-
+    
     <footer>
         <div class="container-titulo">
             <h1>Criação API - SENAI Suiço Brasileira</h1>
             <span>§</span>
         </div>
-
+        
         <ul class="container">
             <li>
                 <h2>Geovanna Caserta</h2>
