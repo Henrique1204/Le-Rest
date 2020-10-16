@@ -1,4 +1,10 @@
 {
+  "usuarios": [
+    {
+      "nome": "luiz",
+      "senha": "123"
+    }
+  ],
   "pratos": [
     {
       "nome": "Macarrão ao molho branco",

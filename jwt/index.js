@@ -74,17 +74,25 @@ console.log("Servidor escutando na porta 3001...")
  
 //authentication
 app.post('/login', (req, res, next) => {
-    //esse teste abaixo deve ser feito no seu banco de dados
-    if(req.body.user === 'luiz' && req.body.pwd === '123'){
-      //auth ok
-      const id = 1; //esse id viria do banco de dados
-      var token = jwt.sign({ id }, process.env.SECRET, {
-        expiresIn: (60 * 60 * 2) // expires in 5min
-      });
-      return res.json({ auth: true, token: token });
-    }
-    
-    res.status(500).json({message: 'Login inválido!'});
+    fetch('http://localhost:3000/usuarios')
+    .then(resFetch => resFetch.json())
+    .then(json => {
+        const usuarios = json;
+
+        usuarios.forEach((usuario) => {
+            if(req.body.user === usuario.nome && req.body.pwd === usuario.senha){
+                //auth ok
+                const id = 1; //esse id viria do banco de dados
+                var token = jwt.sign({ id }, process.env.SECRET, {
+                  expiresIn: (60 * 60 * 2) // expires in 5min
+                });
+                return res.json({ auth: true, token: token });
+            }
+        })
+        
+        res.status(500).json({message: 'Login inválido!'});
+    })
+    .catch(erro => res.json(erro));
 })
  
 app.post('/logout', function(req, res) {

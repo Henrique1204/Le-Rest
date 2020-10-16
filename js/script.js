@@ -17,8 +17,6 @@ function puxarId(event) {
     return id;
 }
 
-// Caceta, tem algo errado, não tá indo o valor do categoria e nem o da descriçãos
-
 function puxarValores(event) {
     const id = puxarId(event);
 
