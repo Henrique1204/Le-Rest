@@ -1,9 +1,12 @@
 // Importa o arquivo modal.js
 import Modal from "./modules/Modal.js";
+import Login from "./modules/Login.js";
 import Busca from "./modules/Busca.js";
 import Deletar from "./modules/Deletar.js";
 import Adicionar from "./modules/Adicionar.js";
 import Atualizar from "./modules/Atualizar.js";
+
+new Login ("#login").iniciar();
 
 function puxarId(event) {
     let id;
