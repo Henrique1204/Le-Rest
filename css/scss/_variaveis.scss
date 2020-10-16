@@ -19,7 +19,6 @@ $distancia-y-g: 60px;
 @mixin ornamento($tamanho: 24, $altura-sep: 3) {
     margin-top: 5px;
     font-size: em($tamanho);
-    // Pra centralizar as barrinhas com o meio do caractere
     display: flex;
     justify-content: center;
     align-items: center;

@@ -3,8 +3,12 @@
 }
 
 .login {
-    padding: $distancia-y-g;
+    padding: ($distancia-y-g * 2);
     display: block;
+
+    @include responsividade() {
+        padding: $distancia-y-g;
+    }
     
     .container-titulo {
         max-width: 480px;
@@ -23,21 +27,24 @@
         @include responsividade(mobile) {
             max-width: 300px;
             
-            h1 {
-                font-size: em(20);
-            }
-            
             span {
                 @include ornamento(16, 2);
             }
         }
     }
-    
+
     p {
-        max-width: 480px;
+        max-width: 600px;
         margin: $distancia-y-p auto $distancia-y-m;
+        font-size: em(18);
+        line-height: 1.4em;
         text-align: center;
         color: rgba($color: $azul, $alpha: 0.6);
+
+        @include responsividade(mobile) {
+            max-width: 300px;
+            font-size: em(14);
+        }
     }
     
     button{
