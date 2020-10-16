@@ -6,8 +6,6 @@ import Deletar from "./modules/Deletar.js";
 import Adicionar from "./modules/Adicionar.js";
 import Atualizar from "./modules/Atualizar.js";
 
-new Login ("#login").iniciar();
-
 function puxarId(event) {
     let id;
 
@@ -77,6 +75,12 @@ function iniciarModais() {
 }
 
 async function iniciar() {
+    const token = sessionStorage.getItem("token")
+
+    if (token) {
+
+    document.body.classList.add("logado");
+    
     // Cria os elementos.
     const cards = await new Busca().criarCards();
 
@@ -84,13 +88,16 @@ async function iniciar() {
     cards.forEach((card) => document.querySelector(".container-card").appendChild(card));
 
     // Para a animação de loading
-    document.querySelector("main").classList.remove("carregando");
+    document.querySelector("main").classList.remove("carregando");    
 
-    // Inicia o script do modal.
+    new Adicionar("#adicionar_item").iniciar();
+    } else {
+        document.body.classList.remove("logado");
+
+        new Login ("#login").iniciar();
+    }
+
     iniciarModais();
 }
 
-// Inicia os scripts quando a janela carrega.
-window.addEventListener("load", iniciar);
-
-new Adicionar("#adicionar_item").iniciar();
+iniciar();

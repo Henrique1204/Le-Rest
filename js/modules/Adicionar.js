@@ -9,19 +9,8 @@ export default class Adicionar {
         this.addEvento = this.addEvento.bind(this);
     }
 
-    async buscarToken() {
-        const req = await fetch('http://localhost:3001/login',{
-            method: "POST",
-            body: JSON.stringify({user: "luiz", pwd: "123"}),
-            headers: {"Content-type": "application/json; charset=UTF-8"}
-        });
-
-        const {token} = await req.json();
-        return token;
-    }
-
-    async adicionarDados() {
-        const token = await this.buscarToken();
+    adicionarDados() {
+        const token = sessionStorage.getItem("token");
 
         fetch('http://localhost:3001/pratos', {
             method: "POST",
