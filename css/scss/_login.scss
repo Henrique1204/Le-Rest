@@ -3,11 +3,11 @@
 }
 
 .login {
-    padding: ($distancia-y-g * 2);
+    padding: ($distancia-y-g * 2) 0;
     display: block;
 
     @include responsividade() {
-        padding: $distancia-y-g;
+        padding: $distancia-y-g 0;
     }
     
     .container-titulo {
