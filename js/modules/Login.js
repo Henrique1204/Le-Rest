@@ -38,13 +38,12 @@ export default class Login {
     });
 
     const {token} = await req.json();
-    sessionStorage.setItem('token', token)
 
     if (token) {
-        sessionStorage.setItem('token', token)
+        sessionStorage.setItem('token', token);
         window.location.reload();
     } else {
-        msgErro.style.display = "block"
+        msgErro.style.display = "block";
     }
 
   }
