@@ -1,7 +1,11 @@
+.logado main{
+    display: grid;
+}
+
 main {
     padding: $distancia-y-g 0;
     position: relative;
-    display: grid;
+    display: none;
     grid-template-columns: 1fr 1000px minmax(120px, 1fr);
     justify-content: center;
     gap: $distancia-y-m $distancia-x;
@@ -24,11 +28,7 @@ main {
             opacity: 1;
         }
 
-        .card-add {
-            display: none;
-        }
-
-        .card-cardapio {
+        .card-cardapio, [data-btn="adicionar"] {
             display: none;
         }
     }
@@ -81,10 +81,10 @@ main {
     [data-btn="adicionar"] {
         @include sombra(4px 4px 8px rgba(0, 0, 0, 0.4));
 
-        width: 120px;
-        height: 120px;
+        width: 80px;
+        height: 80px;
         margin-right: 20px;
-        padding: $distancia-y-m;
+        padding: $distancia-x;
         grid-column: 3;
         justify-self: center;
         align-self: flex-start;
@@ -95,12 +95,6 @@ main {
 
         &:hover {
             transform: rotate(90deg);   
-        }
-
-        @include responsividade(tablet) {
-            width: 80px;
-            height: 80px;
-            padding: $distancia-y-p;
         }
     
         @include responsividade() {

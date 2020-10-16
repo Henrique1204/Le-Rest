@@ -32,9 +32,7 @@
 
         <p>bbbbbbb</p>
 
-        <button type="button"> fazer login
-
-        </button>
+        <button type="button" data-btn="login">fazer login</button>
     </section>
     
     <main class="carregando">
@@ -54,18 +52,18 @@
         <div class="container-card"></div>
     </main>
     
-    <section class="modal-container" data-modalContainer="adicionar">
-        <div class="modal" data-modal="adicionar">
+    <section class="modal-container" data-modalContainer="login">
+        <div class="modal" data-modal="login">
             <button type="button" class="btn-fechar">
                 <img src="img/icon_fechar_azul.svg" alt="Fechar modal">
             </button>
             
             <div class="container-titulo">
-                <h1>login</h1>
+                <h1>Login</h1>
                 <span>§</span>
             </div>
             
-            <form id="adicionar_item">
+            <form id="login">
                 <div class="campo">
                     <label for="usuario">Usuário:</label>
                     <input type="text" name="usuario" id="usuario">
@@ -77,10 +75,7 @@
                     <input name="senha" id="senha" cols="30" rows="10"></input>
                 </div>
                 
-                <small>
-                    erro
-                </small>
-
+                <small class="erro-login">erro</small>
 
                 <button type="button">Finalizar</button>
             </form>

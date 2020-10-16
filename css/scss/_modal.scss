@@ -169,12 +169,19 @@
     }
 
     .modal {
-        &[data-modal="adicionar"] {
+        &[data-modal="adicionar"], &[data-modal="login"] {
             @include modal(claro);
         }
 
         &[data-modal="atualizar"], &[data-modal="deletar"] {
             @include modal(escuro);
+        }
+
+        .erro-login {
+            margin-bottom: $distancia-x;
+            text-align: center;
+            color: #B11;
+            display: none;
         }
     }
 }
