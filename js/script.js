@@ -24,7 +24,7 @@ function iniciarModais() {
         
         // Adiciona o evento de click no botão.
         // Executa o método ativarModal da classe Modal (Arquivo ./modules/modal.js Linha 14).
-        btn.addEventListener("click", modal.ativarModal);
+        // btn.addEventListener("click", modal.ativarModal);
         
         if (modalNome === "atualizar") {
             btn.addEventListener("click", (e) => {
