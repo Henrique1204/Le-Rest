@@ -1,7 +1,7 @@
 {
   "usuarios": [
     {
-      "nome": "luiz",
+      "usuario": "luiz",
       "senha": "123"
     }
   ],

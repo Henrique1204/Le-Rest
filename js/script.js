@@ -1,36 +1,13 @@
 // Importa o arquivo modal.js
 import Modal from "./modules/Modal.js";
+import Utilitarios from "./modules/Utilitarios.js"
 import Login from "./modules/Login.js";
 import Busca from "./modules/Busca.js";
 import Deletar from "./modules/Deletar.js";
 import Adicionar from "./modules/Adicionar.js";
 import Atualizar from "./modules/Atualizar.js";
 
-function puxarId(event) {
-    let id;
-    
-    if (event.target.dataset.id) {
-        id = event.target.dataset.id;
-    } else {
-        id = event.target.parentNode.dataset.id;
-    }
-    
-    return id;
-}
-
-function puxarValores(event) {
-    const id = puxarId(event);
-    
-    const card = document.querySelector(`[data-id="${id}"]`);
-    const dados = {
-        "id": id,
-        "nome": card.querySelector("h2").innerText,
-        "categoria": card.querySelector("[data-categoria]").dataset.categoria,
-        "descricao": card.querySelector("p").innerText
-    }
-    
-    return dados;
-}
+const util = new Utilitarios();
 
 function iniciarModais() {
     // Seleciona os botões que ativam o modal...
@@ -51,7 +28,7 @@ function iniciarModais() {
         
         if (modalNome === "atualizar") {
             btn.addEventListener("click", (e) => {
-                const dados = puxarValores(e);
+                const dados = util.puxarValores(e);
                 const modalElemento = document.querySelector(`[data-modal="${modalNome}"]`);
                 
                 modalElemento.querySelector('[name="nome"]').value = dados["nome"];
@@ -68,7 +45,7 @@ function iniciarModais() {
                 
                 btnNao.addEventListener("click", modal.fecharModal);
                 
-                new Deletar(".opcoes", puxarId(e)).iniciar();
+                new Deletar(".opcoes", util.puxarId(e)).iniciar();
             });
         }
     });

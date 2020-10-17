@@ -1,25 +1,13 @@
-import gerarJson from "./gerarJson.js";
+import Utilitarios from "./Utilitarios.js";
 
 export default class Atualizar {
     constructor(form, id) {
         this.form = document.querySelector(form);
         this.btn = document.querySelector(`${form} [type="button"]`);
         this.id = id;
+        this.util = new Utilitarios();
 
         this.adicionarEvento = this.adicionarEvento.bind(this);
-    }
-
-    validarCampos() {
-        const campos = this.form.querySelectorAll("[name]");
-        let isValido = true;
-
-        campos.forEach((campo) => {
-            if (!campo.value) {
-                isValido = false;
-            }
-        });
-
-        return isValido;
     }
 
     atualizarDados(form, id) {
@@ -27,7 +15,7 @@ export default class Atualizar {
 
         const json = {
             id: id,
-            dados: JSON.parse(gerarJson(form))
+            dados: this.util.coletarDados(form),
         }
 
         fetch('http://localhost:3001/pratos', {
@@ -44,7 +32,7 @@ export default class Atualizar {
         this.btn.addEventListener("click", (e) => {
             e.preventDefault();
 
-            if (this.validarCampos()) {
+            if (this.util.validarCampos(this.form)) {
                 this.atualizarDados(this.form, this.id);
             }
         });

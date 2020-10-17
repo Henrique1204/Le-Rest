@@ -72,7 +72,7 @@
                 
                 <div class="campo">
                     <label for="senha">Senha:</label>
-                    <input type="password" name="senha" id="senha"></input>
+                    <input type="password" name="senha" id="senha" autocomplete="on"></input>
                 </div>
                 
                 <small class="erro-login">O usuário ou senha digitado está incorreto, tente novamente.</small>
@@ -95,12 +95,12 @@
             
             <form id="adicionar_item">
                 <div class="campo">
-                    <label for="nome">Nome:</label>
-                    <input type="text" name="nome" id="nome">
+                    <label for="nome_add">Nome:</label>
+                    <input type="text" name="nome" id="nome_add">
                 </div>
                 
                 <div class="campo">
-                    <select name="categorias" id="categorias">
+                    <select name="categoria" id="categoria_add">
                         <option value="">Selecione a categoria...</option>
                         <option value="massas">Massas</option>
                         <option value="sobremesas">Sobremesas</option>
@@ -109,8 +109,8 @@
                 </div>
                 
                 <div class="campo">
-                    <label for="descricao">Descrição</label>
-                    <textarea name="descricao" id="descricao" cols="30" rows="10"></textarea>
+                    <label for="descricao_add">Descrição</label>
+                    <textarea name="descricao" id="descricao_add" cols="30" rows="10"></textarea>
                 </div>
                 
                 <button type="button">Finalizar</button>
@@ -131,12 +131,12 @@
             
             <form id="atualizar_item">
                 <div class="campo">
-                    <label for="nome">Nome:</label>
-                    <input type="text" name="nome" id="nome">
+                    <label for="nome_att">Nome:</label>
+                    <input type="text" name="nome" id="nome_att">
                 </div>
                 
                 <div class="campo">
-                    <select name="categorias" id="categorias">
+                    <select name="categoria" id="categoria_att">
                         <option value="">Selecione a categoria...</option>
                         <option value="massas">Massas</option>
                         <option value="sobremesas">Sobremesas</option>
@@ -145,8 +145,8 @@
                 </div>
                 
                 <div class="campo">
-                    <label for="descricao">Descrição</label>
-                    <textarea name="descricao" id="descricao" cols="30" rows="10"></textarea>
+                    <label for="descricao_att">Descrição</label>
+                    <textarea name="descricao" id="descricao_att" cols="30" rows="10"></textarea>
                 </div>
                 
                 <!-- Mesma burrada do botão, viu como sujou a url? -->

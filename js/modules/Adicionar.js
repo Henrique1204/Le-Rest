@@ -1,10 +1,10 @@
-// Acho que deu, nem sei
-import gerarJson from "./gerarJson.js";
+import Utilitarios from "./Utilitarios.js";
 
 export default class Adicionar {
     constructor(seletor){
         this.form = document.querySelector(seletor);
         this.btn = document.querySelector(`${seletor} [type="button"]`);
+        this.util = new Utilitarios();
 
         this.addEvento = this.addEvento.bind(this);
     }
@@ -14,7 +14,7 @@ export default class Adicionar {
 
         fetch('http://localhost:3001/pratos', {
             method: "POST",
-            body: gerarJson(this.form),
+            body: JSON.stringify(this.util.coletarDados(this.form)),
             headers: {
                 "Content-type": "application/json; charset=UTF-8",
                 "x-access-token": token
@@ -22,25 +22,11 @@ export default class Adicionar {
         });
     }
 
-    validarCampos() {
-        const campos = this.form.querySelectorAll("[name]");
-        let isValido = true;
-
-        campos.forEach((campo)=>{
-            if (!campo.value) {
-                isValido = false;
-            }
-        });
-
-        return isValido;
-    }
-
     addEvento(){
         this.btn.addEventListener("click", (e) => {
             e.preventDefault();
 
-            if(this.validarCampos(this.form)){
-
+            if(this.util.validarCampos(this.form)){
                 this.adicionarDados();
             }
 
