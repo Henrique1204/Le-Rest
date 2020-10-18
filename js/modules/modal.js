@@ -1,10 +1,12 @@
 export default class Modal {
     // Constróio o objeto.
-    constructor(modalContainer, modal) {
+    constructor(seletor, btn) {
         // Seleciona o container do modal.
-        this.modalContainer = document.querySelector(modalContainer);
+        this.modalContainer = document.querySelector(`[data-modalContainer="${seletor}"]`);
         // Seleciona o modal.
-        this.modal = document.querySelector(modal);
+        this.modal = document.querySelector(`[data-modal="${seletor}"]`);
+        // Seleciona o botão que ativa o modal.
+        this.btnAtivar = document.querySelector(`[data-btn="${seletor}"]`) || btn;
 
         // Ativa o método bind (linha 42).
         this.bindMetodos();
@@ -24,6 +26,10 @@ export default class Modal {
 
     // Adiciona eventos dentro do modal
     addEventosModal() {
+        // Adiciona o evento para abrir o modal.
+        // Evento executa o método ativarModal. (linha 16)
+        this.btnAtivar.addEventListener("click", this.ativarModal);
+
         // Seleciona o botão de fechar do modal.
         const btnFechar = this.modal.querySelector(".btn-fechar");
 
@@ -43,7 +49,14 @@ export default class Modal {
                 // Executa o método fecharModal (linha 20).
                 this.fecharModal();
             }
-        })
+        });
+
+        // Testa se existe uma opção "não" dentro do modal.
+        if (this.modal.querySelector("#nao")) {
+            // Caso exista adiciona o evento de "click" nele.
+            // O evento executa o método fecharModal. (linha 20)
+            this.modal.querySelector("#nao").addEventListener("click", this.fecharModal);
+        }
     }
 
     // Faz os métodos sempre refênciarem a classe no (this).
@@ -59,7 +72,7 @@ export default class Modal {
     // Inicia o modal
     iniciar() {
         // Confere se o container e o modal existem
-        if(this.modalContainer && this.modal) {
+        if(this.modalContainer && this.modal && this.btnAtivar) {
             // Executa o método que adicionar os eventos dentro do modal (linha 26)
             this.addEventosModal();
         }

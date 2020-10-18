@@ -47,10 +47,7 @@ export default class Card {
         btn.appendChild(icone);
 
         // Cria um objeto Modal e inicia seu métodos.
-        const modal = new Modal(`[data-modalContainer="${dataBtn}"]`, `[data-modal="${dataBtn}"]`).iniciar();
-        // Adiciona o evento de click no botão.
-        // O evento executa o método de ativar modal da classe Modal. (Arquivo: Modal.js | Linha: 14)
-        btn.addEventListener("click", modal.ativarModal);
+        new Modal(dataBtn, btn).iniciar();
 
         // Retorna o elemento;
         return btn;

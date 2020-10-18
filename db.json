@@ -41,12 +41,6 @@
       "id": "6",
       "nome": "Tiramisù",
       "descricao": "Biscoitos champanhe embebidos em café e rum. Recheio aerado de creme com queijo mascarpone, açúcar, ovos e vinho Marsala. Cobertura de cacau em pó polvilhado."
-    },
-    {
-      "categoria": "massas",
-      "id": "7",
-      "nome": "Macarrão ao molho branco e brócolis",
-      "descricao": "Massa de fettuccine. Molho branco com creme de leite, raspas de laranja, azeite, cebola e alho em pó, parmesão ralado, salsa e floretes de brócolis."
     }
   ]
 }
